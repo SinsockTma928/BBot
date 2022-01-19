@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('	9acce234a444c4a9798704391132be08');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '공지',
+        description: '버튼을 눌러 공지를 볼 수 있습니다',
+        imageUrl:
+          'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMTNfMzAg%2FMDAxNjA1MjUyNDMyOTkw.La86db8AV4EXRLCwLKeggw1lYoYgpC3bpVoFtfIi3aMg.ktr0kKsqmDjFqBonVPtdkLuBDK3HIxBCXJ6ldqMZrFYg.JPEG.tokyodanmi%2F4.jpg&type=a340',
+        link: {
+          mobileWebUrl: '사진클릭시 모바일 주소',
+          webUrl: '사진클릭시 PC 주소',
+        },
+      },
+      social: {
+        likeCount: 9872, //99999가 최대입니다
+        commentCount: 8517, //99999가 최대입니다
+        sharedCount: 45185, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '공지 보러가기 (미구현)',
+          link: {
+            mobileWebUrl: '클릭시 모바일 주소',
+            webUrl: '클릭시 PC 주소',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
